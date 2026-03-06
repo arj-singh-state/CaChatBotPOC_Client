@@ -10,7 +10,7 @@ import App from './App.tsx'
 // )
 
 
-export function renderWidget() {
+export function renderCaChatWidget() {
   // Find or create a container for the widget
   let container = document.getElementById('widget-root')
   if (!container) {
@@ -40,3 +40,6 @@ export function renderWidget() {
     </StrictMode>
   )
 }
+
+// Expose renderCaChatWidget globally
+;(window as any).renderCaChatWidget = renderCaChatWidget

@@ -8,7 +8,7 @@ export default defineConfig({
     react()
   ],
 
-  base: 'https://cdn.jsdelivr.net/gh/arj-singh-state/CaGovChatBotPOC/app.client/src/dist',
+  base: 'https://cdn.jsdelivr.net/gh/arj-singh-state/CaChatBotPOC_Client/dist',
 
   build: {
 

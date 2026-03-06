@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import styles from './index.css?inline' // Vite supports ?inline for raw CSS
 import App from './App.tsx'
 
 // createRoot(document.getElementById('root')!).render(
@@ -23,6 +23,10 @@ export function renderCaChatWidget() {
   let shadowRoot = container.shadowRoot
   if (!shadowRoot) {
     shadowRoot = container.attachShadow({ mode: 'open' })
+    // Inject styles
+    const style = document.createElement('style')
+    style.textContent = styles
+    shadowRoot.appendChild(style)
   }
 
   // Create a mount point inside the shadow root
@@ -42,4 +46,4 @@ export function renderCaChatWidget() {
 }
 
 // Expose renderCaChatWidget globally
-;(window as any).renderCaChatWidget = renderCaChatWidget
+;(window as any).renderCaChatWidget = renderCaChatWidget();

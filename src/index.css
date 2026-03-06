@@ -2,6 +2,12 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+#widget-root {
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

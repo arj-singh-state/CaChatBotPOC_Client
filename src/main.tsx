@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import styles from './index.css?inline' // Vite supports ?inline for raw CSS
+import appStyles from './App.css?inline'
+import chatStyles from './components/ChatWindow.css?inline'
 import App from './App.tsx'
 
 // createRoot(document.getElementById('root')!).render(
@@ -26,7 +28,18 @@ export function renderCaChatWidget() {
     // Inject styles
     const style = document.createElement('style')
     style.textContent = styles
+
     shadowRoot.appendChild(style)
+
+    const style2 = document.createElement('style')
+    style2.textContent = appStyles
+    
+    shadowRoot.appendChild(style2)
+
+    const style3 = document.createElement('style')
+    style3.textContent = chatStyles
+    
+    shadowRoot.appendChild(style3)
   }
 
   // Create a mount point inside the shadow root

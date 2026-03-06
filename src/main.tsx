@@ -18,6 +18,9 @@ export function renderCaChatWidget() {
   if (!container) {
     container = document.createElement('div')
     container.id = 'widget-root'
+    container.style.position = "sticky"
+    container.style.bottom = '0'
+    container.style.zIndex = '100'
     document.body.appendChild(container)
   }
 
